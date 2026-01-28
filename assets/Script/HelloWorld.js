@@ -53,7 +53,7 @@ cc.Class({
                 ads.showAds(anysdk.AdsType.AD_TYPE_FULLSCREEN);
             }
             //广告事件注册
-            ads.setListener(this.onAdsResult, this);
+            ads.setListener(thisNode.onAdsResult, thisNode);
         });
 
         //支付
@@ -66,7 +66,7 @@ cc.Class({
                 thisNode.label.string = 'pay';
             }
 
-            pay.setListener(this.onPayResult,this);
+            pay.setListener(thisNode.onPayResult, thisNode);
         });
     },
 
@@ -77,8 +77,8 @@ cc.Class({
     },
 
     onAdsResult(code, msg) {
-        thisNode.label.string = 'onAdsResult';
-        thisNode.label.string = 'ads result, resultcode:' + code + ',msg:' + msg;
+        this.label.string = 'onAdsResult';
+        this.label.string = 'ads result, resultcode:' + code + ',msg:' + msg;
         console.log("kkfkkkkk");
     },
 
